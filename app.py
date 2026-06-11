@@ -516,6 +516,12 @@ def _executar_agente_ui(pergunta: str, rotulo: str, stub: bool, brasil_lider: bo
             pass
         if frase:
             st.warning(f"🇧🇷 **Modo Palpiteiro:** {frase}")
+        try:  # auditoria: o caminho stream() não passa por executar_agente (que grava sozinho)
+            import agente as _agente
+            _agente.gravar_execucao(rotulo, pergunta, str(narrativa or ""), frase,
+                                    list(dict.fromkeys(tools)))
+        except Exception as exc:
+            st.caption(f"⚠️ Auditoria não gravada em agente_execucoes: {exc}")
 
     st.session_state.setdefault("historico_agente", []).append({
         "rotulo": rotulo, "pergunta": pergunta, "narrativa": str(narrativa or ""),
