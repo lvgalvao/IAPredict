@@ -5,3 +5,10 @@ python-dotenv
 statsmodels
 scipy
 streamlit
+
+# Agente Copa 2026 (features 12-13) — LangChain 1.0 LTS + LangGraph 1.0 (skill langchain-dependencies)
+langchain>=1.0,<2.0
+langchain-core>=1.0,<2.0
+langgraph>=1.0,<2.0
+langchain-openai>=1.0,<2.0
+langchain-tavily>=0.2
