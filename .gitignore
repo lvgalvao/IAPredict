@@ -3,4 +3,4 @@
 __pycache__/
 *.pyc
 .mcp.json
-skills-lock.json
+skills-lock.json.claude/
